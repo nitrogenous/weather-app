@@ -8,7 +8,7 @@ const WeatherBlock = (props) => {
 
   const getWeatherData = useCallback(async () => {
     const weatherData = await getWeatherByCity(cityName);
-
+    console.log(weatherData);
     setWeatherDetails(weatherData);
   }, [getWeatherByCity, cityName]);
 
@@ -16,11 +16,11 @@ const WeatherBlock = (props) => {
     getWeatherData();
   }, [getWeatherData]);
 
-
   return (
     <div className="weather-block">
-      <span>{weatherDetails?.location?.name}</span>
-      <span>{weatherDetails?.current?.condition?.text}</span>
+      <span>{weatherDetails?.location?.name} </span>
+      <span>{weatherDetails?.current?.condition?.text} </span>
+      <span>{weatherDetails?.current?.temp_c}c</span>      
     </div>
   );
 };

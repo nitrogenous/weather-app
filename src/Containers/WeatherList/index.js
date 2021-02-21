@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import WeatherBlock from '../../Components/WeatherBlock';
 import SearchBlock from '../../Components/SearchBlock';
+import './index.css';
 
 const WeatherList = () => {
   const [locations, setLocations] = useState(['Ankara']);
