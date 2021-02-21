@@ -1,9 +1,13 @@
+import Providers from './Providers/index';
+import WeatherList from './Containers/WeatherList';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-    Weather App
+      <Providers>
+        <WeatherList />
+      </Providers>
     </div>
   );
 }
