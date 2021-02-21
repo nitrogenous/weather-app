@@ -8,7 +8,7 @@ const WeatherBlock = (props) => {
 
   const getWeatherData = useCallback(async () => {
     const weatherData = await getWeatherByCity(cityName);
-    console.log(weatherData);
+
     setWeatherDetails(weatherData);
   }, [getWeatherByCity, cityName]);
 
