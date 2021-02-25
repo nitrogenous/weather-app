@@ -1,6 +1,8 @@
 import { useContext, useState, useCallback, useEffect } from 'react';
 import { WeatherContext } from '../../Providers/WeatherProvider';
 
+const TEN_MINUTES_BY_MS = 10 * 60 * 1000;
+
 const WeatherBlock = (props) => {
   const { getWeatherByCity } = useContext(WeatherContext);
   const [weatherDetails, setWeatherDetails] = useState({});
@@ -15,6 +17,16 @@ const WeatherBlock = (props) => {
   useEffect(() => {
     getWeatherData();
   }, [getWeatherData]);
+
+  useEffect(() => {
+    const getWeatherDataEveryHour = setInterval(() => {
+      getWeatherData();
+    }, TEN_MINUTES_BY_MS);
+
+    return (() => {
+      clearInterval(getWeatherDataEveryHour);
+    });
+  })
 
   return (
     <div className="weather-block">
