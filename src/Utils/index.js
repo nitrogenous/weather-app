@@ -1,4 +1,4 @@
-import { API_KEY } from './credentials';
+// import { API_KEY } from './credentials';
 
 export const sendRequest = async (requestURL) => {  
   try {

@@ -26,7 +26,7 @@ const WeatherBlock = (props) => {
     return (() => {
       clearInterval(getWeatherDataEveryHour);
     });
-  })
+  });
 
   return (
     <div className="weather-block">
